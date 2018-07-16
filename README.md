@@ -75,7 +75,7 @@ we are using the H2Dialect.
 
 <br />
 <br />
-Refer to [link](https://docs.jboss.org/hibernate/orm/5.2/userguide/html_single/Hibernate_User_Guide.html#configurations-hbmddl)
+Refer to [link] (https://docs.jboss.org/hibernate/orm/5.2/userguide/html_single/Hibernate_User_Guide.html#configurations-hbmddl)
 
 ```
 <property name="hibernate.hbm2ddl.auto">update</property>
@@ -99,5 +99,16 @@ They are both tables within my database.
 <mapping class="com.evpmqr.db.model.Employee"></mapping>
 ```
 
-# Model Objects
-todo
+## Model Objects
+I'll only go over one model object here since it applies to both. 
+Let's look at Employee.java   
+ 
+<br />
+<br />
+The @Entity annotation tells us that it's going to be a table within the database
+
+<br />
+The @Id and @GeneratedValue(strategy = GenerationType.AUTO) annotations. @Id is the annotation to specify the primary key.
+@GeneratedValue is to specify how the id gets generated, see [link] (https://docs.oracle.com/javaee/6/api/javax/persistence/GeneratedValue.html) for more info.
+
+**IMPORTANT: Every model must have an empty constructor and getters and setters. Even if you aren't going to use it**
