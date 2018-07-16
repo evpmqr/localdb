@@ -110,6 +110,7 @@ The @Entity annotation tells us that it's going to be a table within the databas
 <br />
 The @Id and @GeneratedValue(strategy = GenerationType.AUTO) annotations. @Id is the annotation to specify the primary key.
 @GeneratedValue is to specify how the id gets generated.    
-see https://docs.oracle.com/javaee/6/api/javax/persistence/GeneratedValue.html for more info.
+
+See https://docs.oracle.com/javaee/6/api/javax/persistence/GeneratedValue.html for more info.
 
 **IMPORTANT: Every model must have an empty constructor and getters and setters. Even if you aren't going to use it**
