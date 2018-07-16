@@ -5,7 +5,7 @@ I will now be explaining the file
 
 
 You don't need to worry about this part
-```
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE hibernate-configuration PUBLIC
         "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
@@ -14,7 +14,7 @@ You don't need to worry about this part
 ```
 
 You should pay attention to some of the stuff in here though
-```
+```xml
 <session-factory>
         <property name="hibernate.bytecode.use_reflection_optimizer">false</property>
         <property name="hibernate.connection.driver_class">org.h2.Driver</property>
@@ -32,7 +32,7 @@ You should pay attention to some of the stuff in here though
 <br />
 Ignore. You don't even need this
 
-```
+```xml
 <property name="hibernate.bytecode.use_reflection_optimizer">false</property>
 ```
 <br />
@@ -40,7 +40,7 @@ Ignore. You don't even need this
 This is important. Since we are using an h2 databse, we need to specify the driver. If you want to change the 
 databse to something like mysql, you will have to change the driver as well.
 
-```
+```xml
 <property name="hibernate.connection.driver_class">org.h2.Driver</property>
 ```
 
@@ -50,7 +50,7 @@ This is the conection url. The ~/test is important here because it's the locatio
 that will  be created. Right now it's being stored in your home directory: C:\Users\YOUR_USER named something like 
 test.mv.db.
 
-```
+```xml
 <property name="hibernate.connection.url">jdbc:h2:~/test</property>
 ```
 
@@ -59,7 +59,7 @@ test.mv.db.
 Since we are using a local connection, just leave this as the default username and password. 
 In the future you will be setting these to whatever your username and password is.
 
-```
+```xml
 <property name="hibernate.connection.username">sa</property>
 <property name="hibernate.connection.password">sa</property>
 ```
@@ -69,7 +69,7 @@ In the future you will be setting these to whatever your username and password i
 This is to specify the dialect. It changes depending on which databse you use. Since we are using h2, we specify that
 we are using the H2Dialect.
 
-```
+```xml
 <property name="hibernate.dialect">org.hibernate.dialect.H2Dialect</property>
 ```
 
@@ -77,7 +77,7 @@ we are using the H2Dialect.
 <br />
 Refer to https://docs.jboss.org/hibernate/orm/5.2/userguide/html_single/Hibernate_User_Guide.html#configurations-hbmddl
 
-```
+```xml
 <property name="hibernate.hbm2ddl.auto">update</property>
 ```
 
@@ -85,7 +85,7 @@ Refer to https://docs.jboss.org/hibernate/orm/5.2/userguide/html_single/Hibernat
 <br />
 This is an optional option that shows the sql query. You don't need to know it
 
-```
+```xml
 <property name="show_sql">true</property>
 ```
 
@@ -94,7 +94,7 @@ This is an optional option that shows the sql query. You don't need to know it
 Depending on how many models you have, this will change. In this case however, I have two classes.
 They are both tables within my database.
 
-```
+```xml
 <mapping class="com.evpmqr.db.model.Person"></mapping>
 <mapping class="com.evpmqr.db.model.Employee"></mapping>
 ```
