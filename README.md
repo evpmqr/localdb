@@ -30,13 +30,11 @@ You should pay attention to some of the stuff in here though
 ```
 <br />
 <br />
-<br />
 Ignore. You don't even need this
 
 ```
 <property name="hibernate.bytecode.use_reflection_optimizer">false</property>
 ```
-<br />
 <br />
 <br />
 This is important. Since we are using an h2 databse, we need to specify the driver. If you want to change the 
@@ -46,7 +44,6 @@ databse to something like mysql, you will have to change the driver as well.
 <property name="hibernate.connection.driver_class">org.h2.Driver</property>
 ```
 
-<br />
 <br />
 <br />
 This is the conection url. The ~/test is important here because it's the location and name of the db file
@@ -59,7 +56,6 @@ test.mv.db.
 
 <br />
 <br />
-<br />
 Since we are using a local connection, just leave this as the default username and password. 
 In the future you will be setting these to whatever your username and password is.
 
@@ -68,7 +64,6 @@ In the future you will be setting these to whatever your username and password i
 <property name="hibernate.connection.password">sa</property>
 ```
 
-<br />
 <br />
 <br />
 This is to specify the dialect. It changes depending on which databse you use. Since we are using h2, we specify that
@@ -80,7 +75,6 @@ we are using the H2Dialect.
 
 <br />
 <br />
-<br />
 Refer to [link](https://docs.jboss.org/hibernate/orm/5.2/userguide/html_single/Hibernate_User_Guide.html#configurations-hbmddl)
 
 ```
@@ -89,14 +83,12 @@ Refer to [link](https://docs.jboss.org/hibernate/orm/5.2/userguide/html_single/H
 
 <br />
 <br />
-<br />
 This is an optional option that shows the sql query. You don't need to know it
 
 ```
 <property name="show_sql">true</property>
 ```
 
-<br />
 <br />
 <br />
 Depending on how many models you have, this will change. In this case however, I have two classes.
