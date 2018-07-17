@@ -1,28 +1,39 @@
 package com.evpmqr;
 
+import com.evpmqr.db.controller.DBController;
 import com.evpmqr.db.model.Employee;
-import com.evpmqr.db.util.HibernateUtil;
-import org.hibernate.Session;
 
 import java.util.List;
 
 public class App {
     public static void main(String[] args) {
-        Session session = HibernateUtil.getSessionFactory().openSession();
+        DBController controller = new DBController();
 
-        session.beginTransaction();
+        /*Save a new Employee*/
+        Employee person = new Employee("Eric", "Test", 2);
+        controller.saveEmployee(person);
 
-        Employee person = new Employee("Rew", "Vue", 34);
+        /*Gets all Employees*/
+        controller.listEmployees();
 
-        session.save(person);
-        session.getTransaction().commit();
+        System.out.println();
+        /*Updates Employee*/
+//        Employee updated = new Employee("Eric", "Vue", 42069);
+//        controller.updateEmployee(1, updated);
 
+        /*Deletes Employee/Employees from DB*/
+//        controller.deleteEmployees(2, 34,35, 67);
+//        controller.commit();
 
-        List<?> results = session.createQuery("FROM Employee as E").list();
+        /*findEmployeeWithFirstName example*/
+        List<?> results = controller.findEmployeesWithFirstName("Eric");
+        results.forEach(System.out::println);
 
+        System.out.println();
+        controller.listEmployees();
+//        Employee employee = session.find(Employee.class, 1);
+//        System.out.println(employee);
 
-        results.forEach(l -> System.out.println(l.toString()));
-        Employee employee = session.find(Employee.class, 1);
-        System.out.println(employee);
+        controller.getSession().getSessionFactory().close();
     }
 }
