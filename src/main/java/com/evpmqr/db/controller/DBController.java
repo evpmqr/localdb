@@ -56,6 +56,10 @@ public class DBController {
         session.getTransaction().commit();
     }
 
+    public void close(){
+        session.getSessionFactory().close();
+    }
+
     public Session getSession() {
         return session;
     }

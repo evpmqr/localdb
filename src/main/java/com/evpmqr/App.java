@@ -34,6 +34,6 @@ public class App {
 //        Employee employee = session.find(Employee.class, 1);
 //        System.out.println(employee);
 
-        controller.getSession().getSessionFactory().close();
+        controller.close();
     }
 }
